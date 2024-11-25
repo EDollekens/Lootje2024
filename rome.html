@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rome met Gijs</title>
+    <style>
+        body {
+            background-color: #0000cd;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInPage 1s ease-out forwards;
+        }
+
+        @keyframes fadeInPage {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        p {
+            font-size: 30px;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeInText 1s ease-out 1s forwards;
+        }
+
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Zorg dat alles verticaal gecentreerd is */
+            height: auto; /* Automatische hoogte aanpassen aan inhoud */
+            padding: 20px 0; /* Optionele padding boven/onder */
+        }
+
+        .slider {
+            display: flex;
+            align-items: center;
+            animation: slide 25s linear infinite; /* Continu bewegen */
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .slider img {
+            max-width: 300px; /* Beperk de breedte */
+            height: auto; /* Proportionele hoogte */
+            margin: 10px; /* Ruimte rondom afbeeldingen */
+            border: 5px solid white; /* Witte rand rondom afbeeldingen */
+            border-radius: 10px; /* Afgeronde hoeken */
+            object-fit: contain; /* Zorg dat volledige afbeelding zichtbaar is */
+            display: block; /* Zorg dat afbeeldingen als blok worden weergegeven */
+        }
+
+        .button-container {
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeInText 1s ease-out 2s forwards; /* Knop verschijnt na 2s */
+        }
+
+        .button-container button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff4500;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #ff6347; /* Lichtere oranje kleur bij hover */
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <img src="PHOTO-2024-05-12-00-02-25.jpg" alt="afbeelding1">
+            <img src="PHOTO-2024-05-12-00-02-26.jpg" alt="afbeelding2">
+            <img src="PHOTO-2024-05-13-22-36-22.jpg" alt="afbeelding4">
+            <img src="PHOTO-2024-05-13-22-36-23.jpg" alt="afbeelding5">
+            <img src="PHOTO-2024-05-13-22-36-24.jpg" alt="afbeelding6">
+            <img src="PHOTO-2024-05-15-23-06-35.jpg" alt="afbeelding7">
+        </div>
+    </div>
+    <p>Samen met je grote broer Gijs op reis gegaan,<br>
+        Voor het eerst samen naar Rome, het avontuur begon spontaan.<br>
+        Je moest heel veel lopen door straten en plein,<br>
+        Maar met zoveel plezier, het was een groot festijn.<br>
+    </p>
+
+    <div class="button-container">
+        <button onclick="window.location.href='hyrox.html'">Ga naar de volgende pagina</button>
+    </div>
+</body>
+</html>

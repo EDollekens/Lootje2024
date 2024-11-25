@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laatste hint</title>
+    <style>
+        body {
+            background-color: #0000cd;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            overflow: hidden; /* Geen scrollbalken */
+            transition: opacity 1s ease-out; /* Zorg voor een fade-out bij navigatie */
+        }
+
+        body.fade-out {
+            opacity: 0; /* Fade-out effect */
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 40px; /* Ruimte tussen tekst en knop */
+            z-index: 10; /* Zorg dat de tekst boven de afbeeldingen ligt */
+        }
+
+        .content p {
+            opacity: 0; /* Begin onzichtbaar */
+        }
+
+        p {
+            font-size: 32px;
+            margin: 0;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .content p:first-of-type {
+            animation: fadeIn 1s ease-out 1s forwards; /* Eerste alinea verschijnt na 1 seconde */
+        }
+
+        .content p:last-of-type {
+            animation: fadeIn 1s ease-out 4s forwards; /* Tweede alinea verschijnt 3 seconden na pagina-laden */
+        }
+
+        .side-images {
+            position: absolute;
+            top: 160px; /* Naar beneden verplaatst */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 60px; /* Meer ruimte tussen de afbeeldingen */
+            height: 450px;
+            animation: fadeIn 2s ease-out 1s forwards; /* Afbeeldingen verschijnen na 3 seconden */
+            opacity: 0;
+        }
+
+        .left-side {
+            left: 180px; /* Nog verder naar binnen verplaatst */
+        }
+
+        .right-side {
+            right: 180px; /* Nog verder naar binnen verplaatst */
+        }
+
+        .side-images img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover; /* Zorg dat de foto's goed gevuld zijn */
+            border-radius: 10px; /* Afgeronde hoeken */
+            border: 3px solid white;
+            transform: rotate(calc(var(--rotate-angle, 0deg)));
+            transition: transform 0.3s ease;
+        }
+
+        .side-images img:hover {
+            transform: scale(1.1) rotate(calc(var(--rotate-angle, 0deg))); /* Vergroting bij hover */
+        }
+
+        .button-container {
+            margin-top: 20px;
+            opacity: 0; /* Begin onzichtbaar */
+            animation: fadeIn 2s ease-out 7s forwards; /* Knop verschijnt na 7 seconden */
+        }
+
+        .button-container button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff4500;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #ff6347; /* Lichtere oranje kleur bij hover */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="side-images left-side">
+        <img src="WhatsApp Image 2024-11-25 at 16.29.47.jpeg" alt="Afbeelding links 1" style="--rotate-angle: -10deg;">
+        <img src="WhatsApp Image 2024-11-25 at 16.29.48 (1).jpeg" alt="Afbeelding links 2" style="--rotate-angle: 10deg;">
+        <img src="WhatsApp Image 2024-11-25 at 16.34.27.jpeg" alt="Afbeelding links 3" style="--rotate-angle: -5deg;">
+    </div>
+
+    <div class="side-images right-side">
+        <img src="WhatsApp Image 2024-11-25 at 16.40.46.jpeg" alt="Afbeelding rechts 1" style="--rotate-angle: 10deg;">
+        <img src="Daan3.jpg" alt="Afbeelding rechts 2" style="--rotate-angle: -10deg;">
+        <img src="Daan4.jpg" alt="Afbeelding rechts 3" style="--rotate-angle: 5deg;">
+    </div>
+
+    <div class="content">
+        <p>Dan vraag je je misschien af waar is nu mijn cadeau?<br>
+            Maar de sint heeft nog één laatste opdracht in petto.<br>
+            Je moet nog één keer opzoek, dan is het klaar,<br>
+            Dan heb jij je cadeau verdiend, zeker waar.<br>
+        </p>
+
+        <p>Buiten ligt het, dat is wel zeker,<br>
+            Dan win je misschien wel de beker.<br>
+            Tussen de spullen voor elke sportfanaat,<br>
+            Vindt jij jouw cadeau, precies op maat!<br>
+        </p>
+    </div>
+
+    <div class="button-container">
+        <button onclick="navigateToNextPage()">Klik hier voordat je gaat</button>
+    </div>
+
+    <script>
+        function navigateToNextPage() {
+            document.body.classList.add('fade-out'); // Voeg fade-out effect toe
+            setTimeout(() => {
+                window.location.href = "Einde.html"; // Navigeer naar nieuwe pagina
+            }, 1000); // Wacht tot fade-out voltooid is
+        }
+    </script>
+</body>
+</html>

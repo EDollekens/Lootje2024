@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feestjes</title>
+    <style>
+        body {
+            background-color: #0000cd;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            overflow: hidden;
+            opacity: 1; /* Begin volledig zichtbaar */
+            transition: opacity 1s ease-out; /* Zorg voor fade-out effect */
+        }
+
+        body.fade-out {
+            opacity: 0; /* Fade-out effect */
+        }
+
+        @keyframes fadeInPage {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        p {
+            font-size: 30px;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeInText 1s ease-out 1s forwards;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Ruimte tussen afbeeldingen */
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeInText 1s ease-out 1.5s forwards;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            border: 2px solid white; /* Rand om de afbeeldingen */
+            border-radius: 10px; /* Afgeronde hoeken */
+        }
+
+        .button-container {
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeInText 1s ease-out 2s forwards; /* Knop verschijnt na 2s */
+        }
+
+        .button-container button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff4500; /* Oranje knop */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #ff6347; /* Lichtere oranje kleur bij hover */
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="65bf61f2-07e1-4fa5-a02b-c33e56bdb811.JPG" alt="afbeelding1">
+        <img src="6b1eeb40-4f3a-4365-8a58-5d0e05dc656b.JPG" alt="afbeelding2">
+        <img src="3437b185-65fb-4a71-8c26-931025def8d1.JPG" alt="afbeelding3">
+    </div>
+    <p>Je nam je kleine zusje mee, voor het eerst op pad,<br>
+        Naar een technofeest, waar de muziek ons had.<br>
+        Het bleef niet bij die ene keer, je kleine zusje wil nu vaker mee,<br>
+        Samen stampen op de beats, dat maakt ons zo tevree.<br>
+    </p>
+    <p>Nu ga je de strijd aan met Anne, techno of raw,<br>
+        Een muzikale tweestrijd, wie wint het nou?<br>
+        Maar samen met familie stampen is het leukste gebaar,<br>
+        Maakt de muziek dan nog uit? We genieten met elkaar.<br>
+    </p>
+    <div class="button-container">
+        <button onclick="navigateToNextPage()">Ga naar de volgende pagina</button>
+    </div>
+
+    <script>
+        function navigateToNextPage() {
+            document.body.classList.add('fade-out'); // Voeg de fade-out klasse toe
+            setTimeout(() => {
+                window.location.href = 'rome.html'; // Navigeer naar de volgende pagina
+            }, 1000); // Wacht tot het fade-out effect voltooid is
+        }
+    </script>
+</body>
+</html>

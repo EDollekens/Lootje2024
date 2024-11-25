@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyrox</title>
+    <style>
+        body {
+            background-color: #0000cd;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            overflow: hidden; /* Geen scrollbalken */
+            transition: opacity 1s ease-out; /* Zorg voor een fade-out bij navigatie */
+        }
+
+        body.fade-out {
+            opacity: 0; /* Fade-out effect */
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center; /* Zorg dat de tekst gecentreerd blijft */
+            margin-bottom: 20px; /* Ruimte tussen tekst en foto's */
+        }
+
+        .content p {
+            opacity: 0; /* Begin onzichtbaar */
+        }
+
+        p {
+            font-size: 32px;
+            margin: 0;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .content p:first-of-type {
+            animation: fadeIn 1s ease-out 1s forwards; /* Eerste alinea verschijnt na 1 seconde */
+        }
+
+        .content p:last-of-type {
+            animation: fadeIn 1s ease-out 4s forwards; /* Tweede alinea verschijnt 3 seconden na pagina-laden */
+        }
+
+        .photo-grid {
+            display: flex;
+            flex-wrap: wrap; /* Zorg dat foto's op meerdere rijen passen */
+            justify-content: center;
+            gap: 20px; /* Ruimte tussen de foto's */
+            opacity: 0; /* Begin onzichtbaar */
+            animation: fadeIn 2s ease-out 7s forwards; /* Foto's verschijnen 1 seconde na de tweede alinea */
+            margin-bottom: 20px; /* Ruimte tussen foto's en de knop */
+        }
+
+        .photo-grid img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover; /* Zorg dat de foto's goed gevuld zijn */
+            border-radius: 10px; /* Afgeronde hoeken */
+            border: 3px solid white; /* Witte rand rond de foto's */
+        }
+
+        .button-container {
+            margin-top: 20px;
+            opacity: 0; /* Begin onzichtbaar */
+            animation: fadeIn 2s ease-out 9s forwards; /* Knop verschijnt na 5 seconden */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .button-container button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff4500;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #ff6347; /* Lichtere oranje kleur bij hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <p>We hebben het hier een keer over gehad,<br>
+            Maar voor dit plan moeten we wel naar een andere stad.<br>
+            Een goede voorbereiding is daarbij het halve werk,<br>
+            Maar een team met ons twee is o zo sterk.<br>
+        </p>
+
+        <p>Dit is een nieuw doel dat je graag verkent,<br>
+            Voor een nieuwe uitdaging waar je volop voor rent.<br>
+            Met iets om in te trainen, passend bij jouw stijl,<br>
+            Maak jij straks indruk, mijl na mijl!<br>
+        </p>
+    </div>
+
+    <div class="photo-grid">
+        <img src="skierg.jpg" alt="Foto 1">
+        <img src="sledpush.jpg" alt="Foto 2">
+        <img src="sledpull.jpg" alt="Foto 3">
+        <img src="burpee.jpg.webp" alt="Foto 4">
+        <img src="row.jpg" alt="Foto 5">
+        <img src="farmers.jpg.webp" alt="Foto 6">
+        <img src="lungee.jpg" alt="Foto 7">
+        <img src="wallballs.jpg" alt="Foto 8">
+    </div>
+
+    <div class="button-container">
+        <button onclick="navigateToNextPage()">Klik hier voor je cadeau!</button>
+    </div>
+
+    <script>
+        function navigateToNextPage() {
+            document.body.classList.add('fade-out'); // Voeg fade-out effect toe
+            setTimeout(() => {
+                window.location.href = "laatstehint.html"; // Navigeer naar nieuwe pagina
+            }, 1000); // Wacht tot fade-out voltooid is
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lieve Daan</title>
+    <style>
+        body {
+            background-color: #0000cd;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            overflow: hidden; /* Geen scrollbalken */
+            transition: opacity 1s ease-out; /* Zorg voor een fade-out bij navigatie */
+        }
+
+        body.fade-out {
+            opacity: 0; /* Fade-out effect */
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 64px;
+            opacity: 0; /* Start onzichtbaar */
+            animation: fadeIn 1s ease-out 0s forwards; /* Verschijnt direct bij laden */
+            margin-bottom: 20px;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%; /* Vul de volledige breedte */
+            opacity: 0; /* Begin onzichtbaar */
+            animation: fadeIn 1s ease-out 1s forwards; /* Verschijnt na de titel */
+            gap: 0px; /* Meer ruimte tussen tekst en afbeeldingen */
+        }
+
+        .side-images {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px; /* Ruimte tussen afbeeldingen */
+        }
+
+        .side-images img {
+            width: 220px; /* Grotere afbeeldingen */
+            height: 220px; /* Grotere hoogte */
+            object-fit: cover; /* Zorg dat de foto's goed gevuld zijn */
+            border-radius: 10px; /* Afgeronde hoeken */
+            border: 3px solid white; /* Rand rond afbeeldingen */
+            transition: transform 0.3s ease;
+        }
+
+        .side-images img:hover {
+            transform: scale(1.1); /* Vergroting bij hover */
+        }
+
+        .left-side {
+            margin-right: auto;
+            margin-left: 150px; /* Meer naar de zijkant */
+        }
+
+        .right-side {
+            margin-left: auto;
+            margin-right: 150px; /* Meer naar de zijkant */
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center; /* Zorg dat de tekst gecentreerd blijft */
+            max-width: 650px; /* Beperk de breedte van de tekst */
+        }
+
+        .content p {
+            opacity: 0; /* Begin onzichtbaar */
+        }
+
+        p {
+            font-size: 32px;
+            margin: 0;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .content p:first-of-type {
+            animation: fadeIn 1s ease-out 1s forwards; /* Eerste alinea verschijnt na 1 seconde */
+        }
+
+        .content p:last-of-type {
+            animation: fadeIn 1s ease-out 4s forwards; /* Tweede alinea verschijnt 1 seconde later */
+        }
+
+        .button-container {
+            margin-top: 20px;
+            opacity: 0; /* Begin onzichtbaar */
+            animation: fadeIn 2s ease-out 7s forwards; /* Verschijnt 1 seconde na de tweede alinea */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .button-container button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff4500;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #ff6347; /* Lichtere oranje kleur bij hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Lieve Daan,</h1>
+
+    <div class="content-container">
+        <!-- Linker afbeeldingen -->
+        <div class="side-images left-side">
+            <img src="WhatsApp Image 2024-11-25 at 16.10.49 (1).jpg" alt="Afbeelding links 1">
+            <img src="WhatsApp Image 2024-11-25 at 16.10.49 (2).jpg" alt="Afbeelding links 2">
+            <img src="WhatsApp Image 2024-11-25 at 16.10.49 (3).jpg" alt="Afbeelding links 3">
+        </div>
+        
+        <!-- Tekst in het midden -->
+        <div class="content">
+            <p>Zo, je hebt de speurtocht doorstaan,<br>
+                Met zoeken en puzzelen, flink je best gedaan.<br>
+                Maar helaas, je bent nog niet helemaal klaar,<br>
+                Er wacht nog iets op je, het is bijna daar.<br>
+            </p>
+
+            <p>Voordat je straks je cadeau krijgt in zicht,<br>
+               Herinneren we ons wat je dit jaar hebt verricht.<br>
+               Het was een jaar vol lachen en plezier,<br>
+               Met momenten samen, koesteren we hier.</p>
+        </div>
+
+        <!-- Rechter afbeeldingen -->
+        <div class="side-images right-side">
+            <img src="WhatsApp Image 2024-11-25 at 16.10.49 (4).jpg" alt="Afbeelding rechts 1">
+            <img src="WhatsApp Image 2024-11-25 at 16.10.49.jpg" alt="Afbeelding rechts 2">
+            <img src="WhatsApp Image 2024-11-25 at 16.10.50.jpg" alt="Afbeelding rechts 3">
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button onclick="navigateToNextPage()">Ga naar de volgende pagina</button>
+    </div>
+
+    <script>
+        function navigateToNextPage() {
+            document.body.classList.add('fade-out'); // Voeg fade-out effect toe
+            setTimeout(() => {
+                window.location.href = "feestjes.html"; // Navigeer naar nieuwe pagina
+            }, 1000); // Wacht tot fade-out voltooid is
+        }
+    </script>
+</body>
+</html>
