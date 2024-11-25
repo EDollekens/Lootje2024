@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einde</title>
+    <style>
+        body {
+            background-color: #0000cd;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInPage 1s ease-out forwards;
+        }
+
+        @keyframes fadeInPage {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        p {
+            font-size: 30px;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeInText 1s ease-out 1s forwards;
+        }
+
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Zorg dat alles verticaal gecentreerd is */
+            height: auto; /* Automatische hoogte aanpassen aan inhoud */
+            padding: 20px 0; /* Optionele padding boven/onder */
+        }
+
+        .slider {
+            display: flex;
+            align-items: center;
+            animation: slide 25s linear infinite; /* Continu bewegen */
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .slider img {
+            max-width: 200px; /* Kleinere afbeeldingen */
+            height: auto; /* Proportionele hoogte */
+            margin: 10px; /* Ruimte rondom afbeeldingen */
+            border: 5px solid white; /* Witte rand rondom afbeeldingen */
+            border-radius: 10px; /* Afgeronde hoeken */
+            object-fit: contain; /* Zorg dat volledige afbeelding zichtbaar is */
+            display: block; /* Zorg dat afbeeldingen als blok worden weergegeven */
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <p>Ga nu maar snel, het wachten is voorbij,<br>
+        Je cadeau ligt klaar, speciaal voor jou, dat maakt je blij.<br>
+        Maar weet na al dat plagen en dat kleine venijn,<br>
+        Kan je zusje niet zonder haar grote broer zijn.<br>
+    </p>
+
+    <p>Dus Daan, onthoud: wees een beetje lief,<br>
+        Want je zusje is goud, dat is mijn slotadvies.<br>
+        Nu is het dan echt klaar,<br>
+        Tot volgend jaar!<br>        
+    </p>
+
+    <p>Liefs, Sint en Sport piet❤️       
+    </p>
+
+    <div class="slider-container">
+        <div class="slider">
+            <img src="Daan1.jpg" alt="afbeelding12">
+            <img src="Daan2jpg.jpeg" alt="afbeelding13">
+            <img src="Daan3.jpg" alt="afbeelding14">
+            <img src="Daan4.jpg" alt="afbeelding15">
+            <img src="WhatsApp Image 2024-11-25 at 16.10.49 (1).jpg" alt="afbeelding1">
+            <img src="WhatsApp Image 2024-11-25 at 16.10.49 (2).jpg" alt="afbeelding2">
+            <img src="WhatsApp Image 2024-11-25 at 16.10.49 (3).jpg" alt="afbeelding4">
+            <img src="WhatsApp Image 2024-11-25 at 16.10.49 (4).jpg" alt="afbeelding5">
+            <img src="WhatsApp Image 2024-11-25 at 16.10.49.jpg" alt="afbeelding6">
+            <img src="WhatsApp Image 2024-11-25 at 16.10.50.jpg" alt="afbeelding7">
+            <img src="WhatsApp Image 2024-11-25 at 16.29.47.jpeg" alt="afbeelding8">
+            <img src="WhatsApp Image 2024-11-25 at 16.29.48 (1).jpeg" alt="afbeelding9">
+            <img src="WhatsApp Image 2024-11-25 at 16.34.27.jpeg" alt="afbeelding10">
+            <img src="WhatsApp Image 2024-11-25 at 16.40.46.jpeg" alt="afbeelding11">
+        </div>
+    </div>
+
+</body>
+</html>
