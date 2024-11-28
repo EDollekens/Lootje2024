@@ -23,21 +23,10 @@
         body.fade-out {
             opacity: 0; /* Fade-out effect */
         }
-        @media (max-width: 768px) {
-    .page-container {
-        transform: scale(0.6);
-    }
-}
-
-@media (max-width: 480px) {
-    .page-container {
-        transform: scale(0.4);
-    }
-}
 
         h1 {
             margin: 0;
-            font-size: 64px;
+            font-size: 54px;
             opacity: 0; /* Start onzichtbaar */
             animation: fadeIn 1s ease-out 0s forwards; /* Verschijnt direct bij laden */
             margin-bottom: 20px;
@@ -62,8 +51,8 @@
         }
 
         .side-images img {
-            width: 220px; /* Grotere afbeeldingen */
-            height: 220px; /* Grotere hoogte */
+            width: 150px; /* Grotere afbeeldingen */
+            height: 150px; /* Grotere hoogte */
             object-fit: cover; /* Zorg dat de foto's goed gevuld zijn */
             border-radius: 10px; /* Afgeronde hoeken */
             border: 3px solid white; /* Rand rond afbeeldingen */
@@ -76,12 +65,12 @@
 
         .left-side {
             margin-right: auto;
-            margin-left: 150px; /* Meer naar de zijkant */
+            margin-left: 120px; /* Meer naar de zijkant */
         }
 
         .right-side {
             margin-left: auto;
-            margin-right: 150px; /* Meer naar de zijkant */
+            margin-right: 120px; /* Meer naar de zijkant */
         }
 
         .content {
@@ -97,7 +86,7 @@
         }
 
         p {
-            font-size: 32px;
+            font-size: 28px;
             margin: 0;
             margin-top: 20px;
             margin-bottom: 30px;
@@ -188,50 +177,6 @@
             }, 1000); // Wacht tot fade-out voltooid is
         }
     </script>
-<script>
-    function scalePageContent() {
-        const baseWidth = 1200; // Basis breedte van de inhoud
-        const baseHeight = 800; // Basis hoogte van de inhoud
-        const scaleWidth = window.innerWidth / baseWidth;
-        const scaleHeight = window.innerHeight / baseHeight;
 
-        // Gebruik de kleinste schaal voor consistente proporties
-        const scale = Math.min(scaleWidth, scaleHeight, 0.5); // Maximaal 50% van de originele grootte
-
-        // Selecteer elementen
-        const content = document.querySelector('.content');
-        const images = document.querySelectorAll('.side-images img');
-        const header = document.querySelector('h1');
-
-        // Pas de schaal van de tekst aan
-        const baseFontSize = 32; // Basisgrootte van de tekst
-        const baseHeaderSize = 64; // Basisgrootte van de koptekst
-        content.style.fontSize = `${baseFontSize * scale}px`;
-        header.style.fontSize = `${baseHeaderSize * scale}px`;
-
-        // Pas de schaal van de afbeeldingen aan
-        const baseImageSize = 220; // Basisgrootte van de afbeeldingen
-        images.forEach((img) => {
-            img.style.width = `${baseImageSize * scale}px`;
-            img.style.height = `${baseImageSize * scale}px`;
-        });
-
-        // Pas marges aan voor consistentie
-        const sideMargins = 150 * scale; // Basis marges aanpassen
-        document.querySelector('.left-side').style.marginLeft = `${sideMargins}px`;
-        document.querySelector('.right-side').style.marginRight = `${sideMargins}px`;
-    }
-
-    // Schaal de inhoud opnieuw bij laden en wijzigen van venstergrootte
-    window.addEventListener('resize', scalePageContent);
-    window.addEventListener('load', scalePageContent);
-
-    function navigateToNextPage() {
-        document.body.classList.add('fade-out'); // Voeg fade-out effect toe
-        setTimeout(() => {
-            window.location.href = "feestjes.html"; // Navigeer naar nieuwe pagina
-        }, 1000); // Wacht tot fade-out voltooid is
-    }
-</script>
 </body>
 </html>
