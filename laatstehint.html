@@ -29,7 +29,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            margin-bottom: 40px; /* Ruimte tussen tekst en knop */
+            margin-bottom: 10px; /* Ruimte tussen tekst en knop */
             z-index: 10; /* Zorg dat de tekst boven de afbeeldingen ligt */
         }
 
@@ -38,10 +38,10 @@
         }
 
         p {
-            font-size: 32px;
+            font-size: 28px;
             margin: 0;
-            margin-top: 20px;
-            margin-bottom: 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
             line-height: 1.4;
         }
 
@@ -55,27 +55,27 @@
 
         .side-images {
             position: absolute;
-            top: 160px; /* Naar beneden verplaatst */
+            top: 100px; /* Naar beneden verplaatst */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             gap: 60px; /* Meer ruimte tussen de afbeeldingen */
-            height: 450px;
+            height: 200px;
             animation: fadeIn 2s ease-out 1s forwards; /* Afbeeldingen verschijnen na 3 seconden */
             opacity: 0;
         }
 
         .left-side {
-            left: 180px; /* Nog verder naar binnen verplaatst */
+            left: 150px; /* Nog verder naar binnen verplaatst */
         }
 
         .right-side {
-            right: 180px; /* Nog verder naar binnen verplaatst */
+            right: 150px; /* Nog verder naar binnen verplaatst */
         }
 
         .side-images img {
-            width: 220px;
-            height: 220px;
+            width: 160px;
+            height: 160px;
             object-fit: cover; /* Zorg dat de foto's goed gevuld zijn */
             border-radius: 10px; /* Afgeronde hoeken */
             border: 3px solid white;
