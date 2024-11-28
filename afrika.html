@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zuid-Afrika</title>
+    <style>
+        body {
+            background-color: #0000cd;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            overflow: hidden; /* Geen scrollbalken */
+            transition: opacity 1s ease-out; /* Zorg voor een fade-out bij navigatie */
+        }
+    
+        body.fade-out {
+            opacity: 0; /* Fade-out effect */
+        }
+    
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center; /* Zorg dat de tekst gecentreerd blijft */
+            margin-bottom: 10px; /* Ruimte tussen tekst en foto's */
+        }
+    
+        .content p {
+            opacity: 0; /* Begin onzichtbaar */
+        }
+    
+        p {
+            font-size: 26px;
+            margin: 10px;
+            line-height: 1.4;
+        }
+    
+        .photo-grid {
+            display: flex;
+            flex-wrap: wrap; /* Zorg dat foto's op meerdere rijen passen */
+            justify-content: center;
+            gap: 20px; /* Ruimte tussen de foto's */
+            opacity: 0; /* Begin onzichtbaar */
+            animation: fadeIn 1s ease-out 1s forwards; /* Foto's verschijnen 1 seconde na pagina-laden */
+            margin-bottom: 10px; /* Ruimte tussen foto's en de tekst */
+        }
+    
+        .photo-grid img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover; /* Zorg dat de foto's goed gevuld zijn */
+            border-radius: 10px; /* Afgeronde hoeken */
+            border: 3px solid white; /* Witte rand rond de foto's */
+        }
+    
+        .content p:first-of-type {
+            animation: fadeIn 1s ease-out 3s forwards; /* Eerste alinea verschijnt na 2 seconden */
+        }
+    
+        .content p:last-of-type {
+            animation: fadeIn 1s ease-out 6s forwards; /* Tweede alinea verschijnt 3 seconden na pagina-laden */
+        }
+    
+        .button-container {
+            margin-top: 10px;
+            opacity: 0; /* Begin onzichtbaar */
+            animation: fadeIn 1s ease-out 9s forwards; /* Knop verschijnt na 4 seconden */
+        }
+    
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    
+        .button-container button {
+            padding: 13px 28px;
+            font-size: 15px;
+            color: white;
+            background-color: #ff4500;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .button-container button:hover {
+            background-color: #ff6347; /* Lichtere oranje kleur bij hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <div class="photo-grid">
+            <img src="leeuw.jpg" alt="Foto 1">
+            <img src="olifant.jpg" alt="Foto 2">
+            <img src="neushoorn.jpg" alt="Foto 3">
+            <img src="luipaard.jpg.webp" alt="Foto 4">
+            <img src="buffel.jpg.webp" alt="Foto 5">
+        </div>
+        <p>Ja Daan, je bracht Eva vroeger vaak aan het huilen,<br>
+            Nu dacht je: met z’n allen naar Zuid-Afrika af te stuiten.<br>
+            Maar weer vloeiden bij Eva de tranen snel,<br>
+            Want jouw plannen raken haar elke keer wel.<br>
+        </p>
+
+        <p>Maar maak je geen zorgen, het komt allemaal wel goed,<br>
+            Een beetje tranen horen erbij, dat geeft ons moed.<br>
+            Hoewel Eva niet meegaat, wenst ze jullie een fijne reis,<br>
+            Veel plezier in het Zuid-Afrika paradijs.<br>
+        </p>
+    </div>
+
+ 
+
+    <div class="button-container">
+        <button onclick="navigateToNextPage()">Ga naar de volgende pagina!</button>
+    </div>
+
+    <script>
+        function navigateToNextPage() {
+            document.body.classList.add('fade-out'); // Voeg fade-out effect toe
+            setTimeout(() => {
+                window.location.href = "hyrox.html"; // Navigeer naar nieuwe pagina
+            }, 1000); // Wacht tot fade-out voltooid is
+        }
+    </script>
+</body>
+</html>
