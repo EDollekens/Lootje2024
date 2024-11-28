@@ -4,93 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Einde</title>
-<style>
-    body {
-        background-color: #0000cd;
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
-        font-size: 24px;
-        overflow: hidden;
-        opacity: 0;
-        animation: fadeInPage 1s ease-out forwards;
-    }
+    <style>
+        body {
+            background-color: #0000cd;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInPage 1s ease-out forwards;
+        }
+        
+        @keyframes fadeInPage {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
     
-    @keyframes fadeInPage {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-    }
-
-    p {
-        font-size: 28px;
-        margin: 10px 0;
-        opacity: 0;
-        animation: fadeInText 1s ease-out forwards;
-    }
+        p {
+            font-size: 28px;
+            margin: 10px 0;
+            opacity: 0;
+            animation: fadeInText 1s ease-out forwards;
+        }
+        
+        @keyframes fadeInText {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
     
-    @keyframes fadeInText {
-        0% { opacity: 0; transform: translateY(20px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Specifieke animaties voor elke alinea */
-    .line1 {
-        animation-delay: 1s; /* Na 1 seconde zichtbaar */
-    }
-
-    .line2 {
-        animation-delay: 3s; /* Na 3 seconden zichtbaar */
-    }
-
-    .line3 {
-        animation-delay: 6s; /* Na 6 seconden zichtbaar */
-    }
-
-    /* Slider instellingen */
-    .slider-container {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        padding: 20px 0;
-        opacity: 0;
-        animation: fadeInSlider 1s ease-out 0.5s forwards; /* Eerder in beeld, na 0.5s */
-    }
+        /* Specifieke animaties voor elke alinea */
+        .line1 {
+            animation-delay: 1s; /* Na 1 seconde zichtbaar */
+        }
     
-    .slider {
-        display: flex;
-        align-items: center;
-        animation: slide 60s linear infinite; /* Langzamere beweging */
-    }
+        .line2 {
+            animation-delay: 3s; /* Na 3 seconden zichtbaar */
+        }
     
-    @keyframes slide {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
-    }
+        .line3 {
+            animation-delay: 6s; /* Na 6 seconden zichtbaar */
+        }
     
-    .slider img {
-        max-width: 150px; /* Kleinere afbeeldingen */
-        height: auto; /* Proportionele hoogte */
-        margin: 10px; /* Ruimte rondom afbeeldingen */
-        border: 5px solid white; /* Witte rand rondom afbeeldingen */
-        border-radius: 10px; /* Afgeronde hoeken */
-        object-fit: contain; /* Zorg dat volledige afbeelding zichtbaar is */
-        display: block;
-    }
-    
-    @keyframes fadeInSlider {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-    }
-</style>
+        /* Slider instellingen */
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            padding: 20px 0;
+            opacity: 0;
+            animation: fadeInSlider 1s ease-out 3s forwards; /* Eerder in beeld, na 0.5s */
+        }
+        
+        .slider {
+            display: flex;
+            align-items: center;
+            animation: slide 30s linear infinite; /* Langzamere beweging */
+        }
+        
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .slider img {
+            max-width: 150px; /* Kleinere afbeeldingen */
+            height: auto; /* Proportionele hoogte */
+            margin: 10px; /* Ruimte rondom afbeeldingen */
+            border: 5px solid white; /* Witte rand rondom afbeeldingen */
+            border-radius: 10px; /* Afgeronde hoeken */
+            object-fit: contain; /* Zorg dat volledige afbeelding zichtbaar is */
+            display: block;
+        }
+        
+        @keyframes fadeInSlider {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
     <p class="line1">Ga nu maar snel, het wachten is voorbij,<br>
