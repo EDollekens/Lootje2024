@@ -20,72 +20,90 @@
             opacity: 0;
             animation: fadeInPage 1s ease-out forwards;
         }
-
+    
         @keyframes fadeInPage {
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
-
+    
         p {
-            font-size: 30px;
-            margin: 20px 0;
+            font-size: 28px;
+            margin:10px 0;
             opacity: 0;
-            animation: fadeInText 1s ease-out 1s forwards;
+            animation: fadeInText 1s ease-out forwards;
         }
-
+    
+        @keyframes fadeInText {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    
+        /* Specifieke animaties voor elke alinea */
+        .line1 {
+            animation-delay: 1s; /* Na 1 seconde zichtbaar */
+        }
+    
+        .line2 {
+            animation-delay: 3s; /* Na 3 seconden zichtbaar */
+        }
+    
+        .line3 {
+            animation-delay: 6s; /* Na 5 seconden zichtbaar */
+        }
+    
+        /* Slider instellingen */
         .slider-container {
             width: 100%;
             overflow: hidden;
             position: relative;
             display: flex;
             justify-content: center;
-            align-items: center; /* Zorg dat alles verticaal gecentreerd is */
-            height: auto; /* Automatische hoogte aanpassen aan inhoud */
-            padding: 20px 0; /* Optionele padding boven/onder */
+            align-items: center;
+            height: auto;
+            padding: 20px 0;
         }
-
+    
         .slider {
             display: flex;
             align-items: center;
             animation: slide 25s linear infinite; /* Continu bewegen */
         }
-
+    
         @keyframes slide {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
-
+    
         .slider img {
-            max-width: 200px; /* Kleinere afbeeldingen */
+            max-width: 150px; /* Kleinere afbeeldingen */
             height: auto; /* Proportionele hoogte */
             margin: 10px; /* Ruimte rondom afbeeldingen */
             border: 5px solid white; /* Witte rand rondom afbeeldingen */
             border-radius: 10px; /* Afgeronde hoeken */
             object-fit: contain; /* Zorg dat volledige afbeelding zichtbaar is */
-            display: block; /* Zorg dat afbeeldingen als blok worden weergegeven */
+            display: block;
         }
-
-        @keyframes fadeInText {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
+    
+        @keyframes fadeInSlider {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <p>Ga nu maar snel, het wachten is voorbij,<br>
+    <p class="line1">Ga nu maar snel, het wachten is voorbij,<br>
         Je cadeau ligt klaar, speciaal voor jou, dat maakt je blij.<br>
         Maar weet na al dat plagen en dat kleine venijn,<br>
         Kan je zusje niet zonder haar grote broer zijn.<br>
     </p>
 
-    <p>Dus Daan, onthoud: wees een beetje lief,<br>
+    <p class="line2">Dus Daan, onthoud: wees een beetje lief,<br>
         Want je zusje is goud, dat is mijn slotadvies.<br>
         Nu is het dan echt klaar,<br>
         Tot volgend jaar!<br>        
     </p>
 
-    <p>Liefs, Sint en Sport piet❤️       
-    </p>
+    <p class="line3">Liefs, Sint en Sport piet❤️</p>
 
     <div class="slider-container">
         <div class="slider">
