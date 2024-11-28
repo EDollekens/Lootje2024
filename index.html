@@ -199,7 +199,7 @@
             const scaleHeight = window.innerHeight / contentHeight;
     
             // Kies de kleinste schaal om vervorming te voorkomen
-            const scale = Math.min(scaleWidth, scaleHeight, 0.7); // Maximaal schaal = 1 (geen uitvergroting)
+            const scale = Math.min(scaleWidth, scaleHeight, 0.4); // Maximaal schaal = 1 (geen uitvergroting)
     
             // Pas schaal aan via transform
             container.style.transform = `scale(${scale})`;
