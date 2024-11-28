@@ -28,8 +28,8 @@
             margin: 0;
             font-size: 54px;
             opacity: 0; /* Start onzichtbaar */
-            animation: fadeIn 1s ease-out 0s forwards; /* Verschijnt direct bij laden */
-            margin-bottom: 20px;
+            animation: fadeIn 1s ease-out 1s forwards; /* Verschijnt direct bij laden */
+            margin-bottom: 10px;
         }
 
         .content-container {
@@ -38,7 +38,7 @@
             align-items: center;
             width: 100%; /* Vul de volledige breedte */
             opacity: 0; /* Begin onzichtbaar */
-            animation: fadeIn 1s ease-out 1s forwards; /* Verschijnt na de titel */
+            animation: fadeIn 1s ease-out 2s forwards; /* Verschijnt na de titel */
             gap: 0px; /* Meer ruimte tussen tekst en afbeeldingen */
         }
 
@@ -51,8 +51,8 @@
         }
 
         .side-images img {
-            width: 150px; /* Grotere afbeeldingen */
-            height: 150px; /* Grotere hoogte */
+            width: 170px; /* Grotere afbeeldingen */
+            height: 170px; /* Grotere hoogte */
             object-fit: cover; /* Zorg dat de foto's goed gevuld zijn */
             border-radius: 10px; /* Afgeronde hoeken */
             border: 3px solid white; /* Rand rond afbeeldingen */
@@ -88,23 +88,23 @@
         p {
             font-size: 28px;
             margin: 0;
-            margin-top: 20px;
-            margin-bottom: 30px;
+            margin-top: 10px;
+            margin-bottom: 20px;
             line-height: 1.4;
         }
 
         .content p:first-of-type {
-            animation: fadeIn 1s ease-out 1s forwards; /* Eerste alinea verschijnt na 1 seconde */
+            animation: fadeIn 1s ease-out 3s forwards; /* Eerste alinea verschijnt na 1 seconde */
         }
 
         .content p:last-of-type {
-            animation: fadeIn 1s ease-out 4s forwards; /* Tweede alinea verschijnt 1 seconde later */
+            animation: fadeIn 1s ease-out 6s forwards; /* Tweede alinea verschijnt 1 seconde later */
         }
 
         .button-container {
-            margin-top: 20px;
+            margin-top: 10px;
             opacity: 0; /* Begin onzichtbaar */
-            animation: fadeIn 2s ease-out 7s forwards; /* Verschijnt 1 seconde na de tweede alinea */
+            animation: fadeIn 2s ease-out 10s forwards; /* Verschijnt 1 seconde na de tweede alinea */
         }
 
         @keyframes fadeIn {
