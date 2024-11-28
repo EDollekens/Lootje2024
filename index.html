@@ -23,6 +23,17 @@
         body.fade-out {
             opacity: 0; /* Fade-out effect */
         }
+        @media (max-width: 768px) {
+    .page-container {
+        transform: scale(0.6);
+    }
+}
+
+@media (max-width: 480px) {
+    .page-container {
+        transform: scale(0.4);
+    }
+}
 
         h1 {
             margin: 0;
@@ -170,6 +181,35 @@
     </div>
 
     <script>
+        function navigateToNextPage() {
+            document.body.classList.add('fade-out'); // Voeg fade-out effect toe
+            setTimeout(() => {
+                window.location.href = "feestjes.html"; // Navigeer naar nieuwe pagina
+            }, 1000); // Wacht tot fade-out voltooid is
+        }
+    </script>
+    <script>
+        function scalePageContent() {
+            const container = document.body;
+            const contentWidth = 1200; // Veronderstelde breedte van de inhoud
+            const contentHeight = 800; // Veronderstelde hoogte van de inhoud
+    
+            // Bereken de schaal op basis van vensterbreedte en -hoogte
+            const scaleWidth = window.innerWidth / contentWidth;
+            const scaleHeight = window.innerHeight / contentHeight;
+    
+            // Kies de kleinste schaal om vervorming te voorkomen
+            const scale = Math.min(scaleWidth, scaleHeight, 1); // Maximaal schaal = 1 (geen uitvergroting)
+    
+            // Pas schaal aan via transform
+            container.style.transform = `scale(${scale})`;
+            container.style.transformOrigin = 'top center'; // Schaal vanuit het midden boven
+        }
+    
+        // Event listeners voor laden en schalen bij venstergrootte wijziging
+        window.addEventListener('resize', scalePageContent);
+        window.addEventListener('load', scalePageContent);
+    
         function navigateToNextPage() {
             document.body.classList.add('fade-out'); // Voeg fade-out effect toe
             setTimeout(() => {
